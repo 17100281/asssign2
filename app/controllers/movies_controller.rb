@@ -11,7 +11,10 @@ class MoviesController < ApplicationController
   end
 
   def index
-    @movies = Movie.all
+    # @movies = Movie.all
+    x = params[:sort_by]
+    @movies = Movie.all.order(x)
+    # flash[:notice] = "#{@x}"
   end
 
   def new
