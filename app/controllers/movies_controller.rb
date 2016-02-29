@@ -18,11 +18,11 @@ class MoviesController < ApplicationController
     @movies = Movie.all.order(x)
     
     if x == "release_date" 
-      @flagDate = "hlite"
+      @flagDate = "hilite"
       @flagTitle = ""
     elsif x == "title" 
       @flagDate = ""
-      @flagTitle = "hlite"
+      @flagTitle = "hilite"
     elsif x == nil
       @flagDate = ""
       @flagTitle = ""
@@ -51,6 +51,16 @@ class MoviesController < ApplicationController
     redirect_to movie_path(@movie)
   end
 
+  def updatenew
+    @pop = []
+    @movies = Movie.all
+    
+    @movies.each do |m|
+      @pop << m.title
+    end
+    
+  end
+  
   def destroy
     @movie = Movie.find(params[:id])
     @movie.destroy
