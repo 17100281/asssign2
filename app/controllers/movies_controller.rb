@@ -13,7 +13,20 @@ class MoviesController < ApplicationController
   def index
     # @movies = Movie.all
     x = params[:sort_by]
+    @flagDate = ""
+    @flagTitle = ""
     @movies = Movie.all.order(x)
+    
+    if x == "release_date" 
+      @flagDate = "hlite"
+      @flagTitle = ""
+    elsif x == "title" 
+      @flagDate = ""
+      @flagTitle = "hlite"
+    elsif x == nil
+      @flagDate = ""
+      @flagTitle = ""
+    end
     # flash[:notice] = "#{@x}"
   end
 
