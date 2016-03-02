@@ -6,8 +6,15 @@ Rails.application.routes.draw do
   root 'movies#index'
 
   # Example of regular route:
-  get 'movies/updatenew' => 'movies#updatenew'
-
+  get 'updatenew/' => 'movies#updatenew1'
+  
+  put 'updatenew/' => 'movies#updatenew2'
+  
+  get 'deletenew/' => 'movies#deletenew1'
+  
+  put 'deletenew/' => 'movies#deletenewTitle'
+  put 'deletenew/' => 'movies#deletenewRating'
+  
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 

@@ -1,0 +1,16 @@
+-# deletenew.html.haml using partial
+
+%h1 Delete An Existing Movie
+
+= form_tag deletenew_path, :method => :put do
+
+  = label :movie, :title, 'Delete by Title'
+  = select :movie, :title, @pop
+  = submit_tag 'Delete Title', class: 'titleDelete'
+
+  = label :movie, :rating, 'Delete by Rating'
+  = select :movie, :rating, ['G','PG','PG-13','R','NC-17']
+  = submit_tag 'Delete Rating', class: 'ratingDelete'
+
+//   = label :movie, :release_date, 'Released On'
+//   = date_select :movie, :release_date
